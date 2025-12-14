@@ -2,7 +2,6 @@ package com.todo.backend.service;
 
 import com.todo.backend.dao.BookCopyRepository;
 import com.todo.backend.dao.BookTitleRepository;
-import com.todo.backend.dao.ReservationRepository;
 import com.todo.backend.dao.TransactionRepository;
 import com.todo.backend.dao.UserRepository;
 import com.todo.backend.dto.bookcopy.CreateBookCopyDto;

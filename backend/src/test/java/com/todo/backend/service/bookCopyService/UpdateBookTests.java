@@ -53,9 +53,8 @@ public class UpdateBookTests {
         var updateDto = new UpdateBookCopyDto();
 
         /// Act & Assert exception
-        var exception = assertThrows(IllegalArgumentException.class, () -> {
-            bookCopyService.updateBookCopy(testBookCopyId, updateDto, "admin-user-id");
-        });
+        var exception = assertThrows(IllegalArgumentException.class, () ->
+                bookCopyService.updateBookCopy(testBookCopyId, updateDto, "admin-user-id"));
 
         /// Assert
         assertEquals("BookCopy with this ID does not exist", exception.getMessage());
@@ -77,9 +76,8 @@ public class UpdateBookTests {
         var updateDto = new UpdateBookCopyDto();
 
         /// Act & Assert exception
-        var exception = assertThrows(IllegalArgumentException.class, () -> {
-            bookCopyService.updateBookCopy(testBookCopyId, updateDto, testUserId);
-        });
+        var exception = assertThrows(IllegalArgumentException.class, () ->
+                bookCopyService.updateBookCopy(testBookCopyId, updateDto, testUserId));
 
         /// Assert
         assertEquals("Current user not found", exception.getMessage());
@@ -163,9 +161,8 @@ public class UpdateBookTests {
         var updateDto = new UpdateBookCopyDto(BookCopyStatus.AVAILABLE, BookCopyCondition.NEW);
 
         /// Act
-        var exception = assertThrows(IllegalArgumentException.class, () -> {
-            bookCopyService.updateBookCopy(testBookCopyId, updateDto, testUserId);
-        });
+        var exception = assertThrows(IllegalArgumentException.class, () ->
+                bookCopyService.updateBookCopy(testBookCopyId, updateDto, testUserId));
 
         /// Assert
         assertEquals("Librarians cannot change book status while the book is borrowed", exception.getMessage());
@@ -194,9 +191,8 @@ public class UpdateBookTests {
         var updateDto = new UpdateBookCopyDto(BookCopyStatus.DAMAGED, BookCopyCondition.NEW);
 
         /// Act
-        var exception = assertThrows(IllegalArgumentException.class, () -> {
-            bookCopyService.updateBookCopy(testBookCopyId, updateDto, testUserId);
-        });
+        var exception = assertThrows(IllegalArgumentException.class, () ->
+                bookCopyService.updateBookCopy(testBookCopyId, updateDto, testUserId));
 
         /// Assert
         assertEquals("Cannot change status from BORROWED while there are active transactions. Return the book first.", exception.getMessage());
