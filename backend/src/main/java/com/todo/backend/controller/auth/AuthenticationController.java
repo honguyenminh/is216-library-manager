@@ -48,7 +48,7 @@ public class AuthenticationController {
         Authentication auth;
         try {
             auth = authManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(req.cccd(), req.password())
+                new UsernamePasswordAuthenticationToken(req.cccd(), req.password())
             );
         } catch (AuthenticationException e) {
             return ResponseEntity.badRequest().body("Invalid credentials");

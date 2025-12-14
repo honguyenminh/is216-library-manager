@@ -2,7 +2,6 @@ package com.todo.backend.service;
 
 import com.todo.backend.dao.BookCopyRepository;
 import com.todo.backend.dao.BookTitleRepository;
-import com.todo.backend.dao.ReservationRepository;
 import com.todo.backend.dao.TransactionRepository;
 import com.todo.backend.dao.UserRepository;
 import com.todo.backend.dto.bookcopy.CreateBookCopyDto;
@@ -24,7 +23,6 @@ import java.util.List;
 public class BookCopyService {
     private final BookCopyRepository bookCopyRepository;
     private final BookTitleRepository bookTitleRepository;
-    private final ReservationRepository reservationRepository;
     private final TransactionRepository transactionRepository;
     private final UserRepository userRepository;
     private final BookCopyMapper bookCopyMapper;
