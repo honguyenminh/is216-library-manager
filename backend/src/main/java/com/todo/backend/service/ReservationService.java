@@ -251,7 +251,7 @@ public class ReservationService {
      * Assign a specific BookCopy to a reservation when user comes to pick up
      * This converts an online reservation to a physical checkout
      */
-    public ResponseReservationDto assignBookCopyToReservation(String reservationId, String userId) {
+    public ResponseReservationDto assignBookCopyToReservation(String reservationId) {
         Reservation reservation = reservationRepository.findById(reservationId)
                 .orElseThrow(() -> new RuntimeException("Reservation not found"));
 

@@ -126,7 +126,7 @@ public class ReservationController {
     public ResponseEntity<?> assignBookCopyToReservation(@PathVariable String id, Authentication authentication) {
         try {
             String userId = authentication.getName();
-            ResponseReservationDto updatedReservation = reservationService.assignBookCopyToReservation(id, userId);
+            ResponseReservationDto updatedReservation = reservationService.assignBookCopyToReservation(id);
             return ResponseEntity.ok(updatedReservation);
         } catch (Exception e) {
             return ResponseEntity.status(500).body("Error assigning book copy: " + e.getMessage());
