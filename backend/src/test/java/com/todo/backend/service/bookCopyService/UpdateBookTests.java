@@ -228,5 +228,4 @@ public class UpdateBookTests {
         verify(bookCopyRepository).save(bookCopyCaptor.capture());
         assertEquals(BookCopyStatus.DAMAGED, bookCopyCaptor.getValue().getStatus());
     }
-
 }
